@@ -1,0 +1,33 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Peliculas APP</h1>
+      <p class="lead">Aplicacion de  peliculas</p>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="container">
+      <br>
+    
+     
+      <!--Definimos que vamos a enviar asi le indicamos que solo le enviaremos 6-->
+      <app-galeria [peliculas]="peliculasActuales|slice:0:6"
+                        titulo="Peliculas en Cartelera" 
+                                        ></app-galeria>
+                    <!--la segunda no va en parentesis pq se creo aqui-->
+        <br>
+        <br>
+                    <app-galeria [peliculas]="peliculasInfantiles|slice:0:6"
+                    titulo="Peliculas Infantiles" 
+                                    ></app-galeria>
+                                    <br>  
+                                    <br>
+        <app-galeria [peliculas]="peliculasPopulares|slice:0:6"
+           titulo="Peliculas Populares "                           
+             ></app-galeria>                                         
+                             
+    </div>
+    

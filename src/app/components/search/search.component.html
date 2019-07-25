@@ -1,0 +1,29 @@
+<br>
+
+<div class="row">
+<div class="col-md-12">
+                <!--hacemos el input le damos nombre  de angular y asignamos el valor no se mando el parametro pq se tiene en ngmodel-->
+  <input type="text"   (keyup.enter)="busqueda()"   placeholder="buscar pelicula....." class="form-control"  [(ngModel)]="buscar" name="buscar" >
+
+</div>
+</div>
+
+
+<h1>Busqueda</h1>
+  
+<div class="row animated fadeIn fast" >
+<div class="card-columns">
+  <div class="card" *ngFor="let resultado of resultados">
+    <img [src]="resultado | shared " class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{resultado.title}}</h5>
+      <p class="card-text text-justify">{{resultado.overview|slice:0:200}}</p>
+      <!--1 DONDE VAMOS 2 ID 3 PAGINA 1UE VENIMOS Y 4 DATO DE BUSCAR QUE LE VAMOS A MANDAR-->
+      <button 
+      type="button" [routerLink]="['/pelicula',resultado.id,'search',buscar]" 
+      class="btn btn-outline-primary btn-block">Ver mas</button>
+    </div>
+  </div>
+  </div>
+
+  
